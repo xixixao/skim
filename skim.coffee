@@ -37,12 +37,13 @@ program
     'Return the first result and all results at that depth')
   .option('-d, --dir', 'Look for directories only')
   .option('-f, --file', 'Look for files only')
-  .parse(process.argv);
 
 program.on '--help', ->
-  console.log "By default, tries to find all results. Search location" +
-              "can also be specified in the first argument, but named" +
-              "folders must end with '/' or '\\'."
+  console.log """By default, tries to find all results. Search location
+              can also be specified in the first argument, but named
+              folders must end with '/' or '\\'."""
+
+program.parse(process.argv);
 
 program.max ?= Infinity
 
